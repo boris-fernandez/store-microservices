@@ -2,6 +2,8 @@ package com.microservice.usuarios.domain.model;
 
 
 
+import com.microservice.usuarios.domain.enums.Rol;
+
 import java.time.LocalDateTime;
 
 public record User (

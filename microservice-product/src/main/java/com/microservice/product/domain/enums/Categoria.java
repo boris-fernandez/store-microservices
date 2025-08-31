@@ -1,4 +1,4 @@
-package com.microservice.product.domain.model;
+package com.microservice.product.domain.enums;
 
 public enum Categoria {
     ELECTRONICA,

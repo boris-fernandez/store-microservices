@@ -1,6 +1,6 @@
 package com.microservice.usuarios.infrastructure.entity;
 
-import com.microservice.usuarios.domain.model.Rol;
+import com.microservice.usuarios.domain.enums.Rol;
 import com.microservice.usuarios.domain.model.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
