@@ -1,11 +1,10 @@
 package com.microservice.product.infrastructure.mapper;
 
 import com.microservice.product.domain.model.Producto;
-import com.microservice.product.infrastructure.dto.RequestProducto;
+import com.microservice.product.application.dto.request.RequestProducto;
+import com.microservice.product.application.dto.response.ResponseProducto;
 import com.microservice.product.infrastructure.entity.ProductoEntity;
-import org.springframework.stereotype.Component;
 
-@Component
 public class ProductoMapper {
 
     public static Producto toProductoDomain(ProductoEntity productoEntity){
@@ -20,8 +19,13 @@ public class ProductoMapper {
                 producto.imagenUrl(), producto.disponible());
     }
 
-    public static Producto dtoToProductoDomain(RequestProducto requestProducto){
+    public static Producto RequestProductoToDomain(RequestProducto requestProducto){
         return new Producto(null, requestProducto.nombre(), requestProducto.descripcion(), requestProducto.precio(),
                 requestProducto.stock(), requestProducto.categoria(), requestProducto.imageUrl(), true);
+    }
+
+    public static ResponseProducto DomainToResponseProducto(Producto producto){
+        return new ResponseProducto(producto.id(), producto.nombre(), producto.descripcion(), producto.precio(), producto.stock(), producto.categoria(),
+                producto.imagenUrl(), producto.disponible());
     }
 }

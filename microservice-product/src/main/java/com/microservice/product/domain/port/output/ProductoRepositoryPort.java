@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface ProductoRepositoryPort {
     Producto save(Producto producto);
-    void deleteById(Long id);
-    Optional<Producto> findById(Long id);
+    void deleteById(String id);
+    Optional<Producto> findById(String id);
     List<Producto> findAll();
 }

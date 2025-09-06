@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+import static com.microservice.product.infrastructure.mapper.ProductoMapper.toProductoDomain;
+import static com.microservice.product.infrastructure.mapper.ProductoMapper.toProductoEntity;
+
 @Repository
 @RequiredArgsConstructor
 public class ProductoRepositoryAdapter implements ProductoRepositoryPort {
@@ -18,16 +21,16 @@ public class ProductoRepositoryAdapter implements ProductoRepositoryPort {
 
     @Override
     public Producto save(Producto producto) {
-        return ProductoMapper.toProductoDomain(productoRepository.save(ProductoMapper.toProductoEntity(producto)));
+        return toProductoDomain(productoRepository.save(toProductoEntity(producto)));
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(String id) {
         productoRepository.deleteById(id);
     }
 
     @Override
-    public Optional<Producto> findById(Long id) {
+    public Optional<Producto> findById(String id) {
         return productoRepository.findById(id).map(ProductoMapper::toProductoDomain);
     }
 

@@ -1,4 +1,4 @@
-package com.microservice.product.infrastructure.dto;
+package com.microservice.product.application.dto.response;
 
 import com.microservice.product.domain.enums.Categoria;
 
