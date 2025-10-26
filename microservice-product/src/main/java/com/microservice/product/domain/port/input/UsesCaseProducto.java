@@ -11,4 +11,5 @@ public interface UsesCaseProducto {
     Producto findById(String id);
     List<Producto> listProducto();
     Producto updateProducto(String id, UpdateProducto updateProducto);
+    
 }
